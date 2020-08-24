@@ -9,3 +9,16 @@
   ### 4. 用户-角色表（user-role）
   ### 5. 角色-权限表（role-permission）
 
+## 3. 需要引入的依赖
+ ```
+ <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+ ```
