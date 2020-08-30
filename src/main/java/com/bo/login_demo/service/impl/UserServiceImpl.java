@@ -4,6 +4,7 @@ import com.bo.login_demo.entity.User;
 import com.bo.login_demo.repository.UserRepository;
 import com.bo.login_demo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByUserName(String userName) {
         return repository.findByUserName(userName);
+    }
+
+    @Override
+    public User getUerInfo() {
+        String userName = SecurityUtils.getSubject().getPrincipal().toString();
+        return findByUserName(userName);
     }
 
     @Override
