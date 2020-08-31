@@ -22,3 +22,9 @@
     <version>1.4.0</version>
  </dependency>
  ```
+## 4. 其他
+1. 需要在数据库中新增login表
+```
+create database login
+```
+2. 数据库密码默认为 123456，可在application.yml中修改。
