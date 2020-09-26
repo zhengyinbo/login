@@ -17,8 +17,10 @@ import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -37,7 +39,7 @@ public class LoginController {
     private RoleService roleService;
 
     @PostMapping("/login")
-    public Object login(@RequestBody User user){
+    public Object login(@Valid @RequestBody User user){
         Subject subject = SecurityUtils.getSubject();
         SecurityUtils.getSubject().getSession().setTimeout(-1000l);//设置session失效时间：-1000l表示无限时长，默认为1800000表示30分钟 30*60*1000
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(), user.getPassword());
