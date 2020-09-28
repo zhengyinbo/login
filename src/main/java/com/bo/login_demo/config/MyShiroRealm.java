@@ -70,7 +70,6 @@ public class MyShiroRealm extends AuthorizingRealm {
                 ByteSource.Util.bytes(Constant.PASSWORD_SALT),
                 getName()
         );
-
         return authenticationInfo;
     }
 }

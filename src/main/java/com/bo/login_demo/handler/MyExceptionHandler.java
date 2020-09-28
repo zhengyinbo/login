@@ -19,6 +19,12 @@ import javax.validation.ConstraintViolationException;
  * @DATE 2020/9/26
  **/
 
+/**
+ * @ControllerAdvice 注解表示开启了全局异常的捕获，
+ * 我们只需在自定义的方法使用 @ExceptionHandler 注解
+ * 然后定义捕获异常的类型即可对这些捕获的异常进行统一的处理。
+ */
+
 @ControllerAdvice
 public class MyExceptionHandler {
 
